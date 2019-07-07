@@ -1,0 +1,38 @@
+#server.port=9000
+#spring.datasource.url=jdbc:postgresql://localhost:5432/User_service
+#spring.datasource.username=postgres
+#spring.datasource.password=R_aja09521
+#spring.datasource.driver-class-name=org.postgresql.Driver
+#spring.jpa.database-platform = org.hibernate.dialect.PostgreSQLDialect
+#spring.jpa.generate-ddl=true
+#spring.jpa.hibernate.ddl-auto = update
+#spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/User_service
+    username: postgres
+    password: R_aja09521
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+  properties:
+    hibernate:
+      temp:
+      use_jdbc_metadata_defaults: false
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    ddl-auto: none
+  application:
+    name: profile
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:9001/oauth/check_token
+    client:
+      client-id: mobile
+      client-secret: pin
+
+server:
+  port: 9000
